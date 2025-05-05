@@ -27,8 +27,6 @@ class Board:
         # Choose initialization mode
         if glider is not None:
             self._place_pattern(glider)
-            print("Glider placed")
-            print(f"{p}")
         elif init_mode == "Odd Columns Alive":
             self._initialize_odd_columns()
         elif init_mode == "Odd Diagonals Alive":
@@ -271,7 +269,6 @@ class Simulator:
         self.init_mode = self.controls["init_mode_dropdown"].selected_option
         if isinstance(self.init_mode, tuple):
             self.init_mode = self.init_mode[0]  
-        print(f"Selected mode: {self.init_mode}")
 
         if self.init_mode == "Glider":
             probability = 1.0
